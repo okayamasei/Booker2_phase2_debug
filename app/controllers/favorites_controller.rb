@@ -17,7 +17,6 @@ class FavoritesController < ApplicationController
     if Favorite.where(book_id: params[:book_id], user_id: current_user.id).exists?
       @favorite = Favorite.find_by(user_id: current_user, book_id: params[:book_id])
       @favorite.destroy
-      redirect_to books_path
     end
   end
 end
