@@ -6,7 +6,6 @@ class FavoritesController < ApplicationController
     if !Favorite.where(book_id: params[:book_id], user_id: current_user.id).exists?
       @favorite = current_user.favorites.new(:book_id => params[:book_id])
       @favorite.save
-      redirect_to books_path
 
     end
   end
